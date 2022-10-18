@@ -1,4 +1,77 @@
-body {
+* {
+  text-align: center;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+.title {
+  font-size: 70px;
+  text-decoration: none;
+  padding: 30px;
+}
+
+.sign-up-shortcut {
+  font-size: large;
+  float: right;
+}
+
+nav {
+  font-size: 30px;
+  width: 100vw;
+  padding: 17px;
+  background-color: tan;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+div.Main {
+  display: flexbox;
+  font-size: 60px;
+  height: 70vh;
+  background-image: url(https://wallpapercave.com/wp/GKZlBnE.jpg);
+  background-size: 1000px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 60px;
+}
+
+form {
+  padding: 150px;
+}
+
+#main-container {
+  align-items: center;
+}
+
+input.position-relative.form-control.form-control-lg {
+  background-color: rgb(255, 255, 255);
+  z-index: 5;
+  font-size: x-large;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+div.form-check {
+  margin: 25px;
+}
+
+button.btn {
+  background-color: rgb(204, 171, 95);
+  width: 100;
+  font-size: x-large;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+/* input.position-relative.form-control.form-control-lg:focus {
+  outline: blue;
+} */
+
+/*////////////////////////////////////////////////
+ body {
   display: flex;
   align-items: center;
   background-color: rgb(92, 92, 92);
@@ -14,7 +87,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 30px;
-}
+} /*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 /* .App {
   text-align: center;
