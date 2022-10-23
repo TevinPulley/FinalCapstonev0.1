@@ -1,21 +1,20 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Pages/Home";
 import Shop from "./Pages/Shop";
 import About from "./Pages/About";
 import Profile from "./Pages/Profile";
+import CreateProfile from "./Pages/CreateProfile";
 import ErrorPage from "./Pages/ErrorPage";
-// used for ReactBootstrap.
-// import CollapsibleExample from "./Components/Nav.js";
-// import { Navbar, Container } from "react-bootstrap";
+import mainlogo from "./images/mainlogo.png";
 
 function App() {
   return (
     <Router>
       <div>
         <Link className="title" to="/">
-          {" "}
-          PageTitle{" "}
+          <img src={mainlogo} className="App-logo" />
         </Link>
         <Link className="sign-up-shortcut" to="/profile">
           {" "}
@@ -34,6 +33,7 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/about" element={<About />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/createprofile" element={<CreateProfile />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <p>foooter</p>

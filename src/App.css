@@ -28,8 +28,9 @@ div.Main {
   display: flexbox;
   font-size: 60px;
   height: 70vh;
-  background-image: url(https://wallpapercave.com/wp/GKZlBnE.jpg);
-  background-size: 1000px;
+  width: ;
+  background-image: url(https://thumbs.dreamstime.com/b/crystal-border-bottom-blue-70076705.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   padding: 60px;
@@ -64,6 +65,24 @@ button.btn {
   padding-bottom: 14px;
   padding-right: 24px;
   padding-left: 24px;
+  color: black;
+}
+
+a#create {
+  font-size: 45px;
+  position: absolute;
+}
+
+Button.create {
+  margin-top: 35px;
+}
+
+h1.SignIn {
+  padding-bottom: 40px;
+}
+
+h1.or {
+  padding-top: 60px;
 }
 
 /* input.position-relative.form-control.form-control-lg:focus {
