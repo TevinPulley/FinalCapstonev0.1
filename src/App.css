@@ -24,11 +24,20 @@ nav {
   align-items: center;
 }
 
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+a.sign-up-shortcut {
+  text-decoration: none;
+  color: black;
+}
+
 div.Main {
   display: flexbox;
   font-size: 60px;
   height: 70vh;
-  width: ;
   background-image: url(https://thumbs.dreamstime.com/b/crystal-border-bottom-blue-70076705.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -83,6 +92,10 @@ h1.SignIn {
 
 h1.or {
   padding-top: 60px;
+}
+
+div.foooter {
+  display: 100vh;
 }
 
 /* input.position-relative.form-control.form-control-lg:focus {

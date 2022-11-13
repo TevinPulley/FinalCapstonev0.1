@@ -14,7 +14,7 @@ function App() {
     <Router>
       <div>
         <Link className="title" to="/">
-          <img src={mainlogo} className="App-logo" />
+          <img alt="App-logo" src={mainlogo} className="App-logo" />
         </Link>
         <Link className="sign-up-shortcut" to="/profile">
           {" "}
@@ -36,7 +36,9 @@ function App() {
         <Route path="/createprofile" element={<CreateProfile />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-      <p>foooter</p>
+      <div className="foooter">
+        <p>foooter</p>
+      </div>
     </Router>
   );
 }
