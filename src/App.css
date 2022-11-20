@@ -27,6 +27,7 @@ nav {
 nav a {
   text-decoration: none;
   color: black;
+  padding: 10%;
 }
 
 a.sign-up-shortcut {
@@ -90,12 +91,40 @@ h1.SignIn {
   padding-bottom: 40px;
 }
 
+div.col {
+  display: flexbox;
+  padding: 50px;
+  max-width: 600px;
+}
+
+img.card-img-top {
+  width: 80%;
+  padding-left: 20%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+div.itemCard.card {
+  background-color: rgb(51, 51, 51);
+  display: flexbox;
+}
+
 h1.or {
   padding-top: 60px;
 }
 
 div.foooter {
-  display: 100vh;
+  background-color: grey;
+  display: 100vh 100vw;
+}
+
+/* to make buttons look like <a> until propper href values can be set. */
+button.text-reset {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 /* input.position-relative.form-control.form-control-lg:focus {

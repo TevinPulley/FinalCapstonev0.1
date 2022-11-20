@@ -8,6 +8,11 @@ import Profile from "./Pages/Profile";
 import CreateProfile from "./Pages/CreateProfile";
 import ErrorPage from "./Pages/ErrorPage";
 import mainlogo from "./images/mainlogo.png";
+import Foooter from "./Components/foooter.js";
+//3 imports below are causing issues with nav bar spacing. (Fixed!! with CSS padding around nav components.)
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "mdbreact/dist/css/mdb.css";
 
 function App() {
   return (
@@ -36,9 +41,7 @@ function App() {
         <Route path="/createprofile" element={<CreateProfile />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-      <div className="foooter">
-        <p>foooter</p>
-      </div>
+      <Foooter />
     </Router>
   );
 }
