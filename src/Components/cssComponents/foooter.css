@@ -1,0 +1,11 @@
+img.footer-app-logo {
+  position: inherit;
+  size: inherit;
+  left: 0;
+  width: 200px;
+  height: auto;
+}
+
+div.col-md3.col-lg-4.col-xl-3.mx-a {
+  max-width: 100%;
+}

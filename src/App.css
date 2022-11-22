@@ -35,17 +35,6 @@ a.sign-up-shortcut {
   color: black;
 }
 
-div.Main {
-  display: flexbox;
-  font-size: 60px;
-  height: 70vh;
-  background-image: url(https://thumbs.dreamstime.com/b/crystal-border-bottom-blue-70076705.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 60px;
-}
-
 form {
   padding: 150px;
 }
@@ -99,9 +88,11 @@ div.col {
 
 img.card-img-top {
   width: 80%;
+
   padding-left: 20%;
+  padding-top: 15px;
   height: 15vw;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 div.itemCard.card {

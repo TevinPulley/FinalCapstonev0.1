@@ -1,4 +1,6 @@
 import React from "react";
+import "../Components/cssComponents/foooter.css";
+import mainlogo from "../images/mainlogo.png";
 import {
   MDBFooter,
   MDBContainer,
@@ -38,23 +40,26 @@ export default function Foooter() {
       </section>
 
       <section className="">
-        <MDBContainer className="text-center text-md-start mt-5">
+        <MDBContainer fluid className="text-center text-md-start mt-5">
           <MDBRow className="mt-3">
             <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">
-                <MDBIcon icon="gem" className="me-3" />
-                Crystal Island
-              </h6>
+              <h3 className="text-uppercase fw-bold mb-4">
+                <img
+                  alt="App-logo"
+                  src={mainlogo}
+                  className="foooter-App-logo"
+                />
+              </h3>
               <p>
-                Always looking to achieve 100% customer satisfaction. Please
-                contact us with any questions or concerns. Thank you!
+                Always looking to achieve 100% customer satisfaction since 2022.
+                Please contact us with any questions or concerns. Thank you!
               </p>
             </MDBCol>
 
             <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Products</h6>
               <p>
-                <button href="#!" className="text-reset">
+                <button href="" className="text-reset">
                   Crystals
                 </button>
               </p>
