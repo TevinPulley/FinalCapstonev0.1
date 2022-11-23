@@ -28,11 +28,14 @@ div.homepagetext {
 }
 
 div.homepageParagraph {
-  display: flexbox;
+  display: flex;
 }
 
-img {
-  width: 30vw;
+img.homepageimg {
+  width: 10vw;
+  height: auto;
+  flex: 1;
+  margin: 10vw;
 }
 
 /*////////// Carousel CSS \\\\\\\\\\\\\\\\\\\*/

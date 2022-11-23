@@ -67,7 +67,11 @@ function Home() {
           </p>
         </div>
 
-        <img src={crystalbackground2} alt="homepagepic" />
+        <img
+          src={crystalbackground2}
+          alt="homepagepic"
+          className="homepageimg"
+        />
       </div>
       <div className="Main">
         <a className="shopButton" href="./Shop">

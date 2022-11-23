@@ -1,0 +1,31 @@
+/* div.aboutpageparagraph {
+  display: flex;
+}
+
+div.aboutpagetext {
+  width: 30vw;
+  padding: 35px;
+  margin: 10%;
+}
+
+div.aboutpageimg {
+  width: 10vw;
+  height: auto;
+  flex: 1;
+  margin: 10vw;
+} */
+div.aboutpageparagraph {
+  display: flex;
+}
+div.aboutpagetext {
+  width: 30vw;
+  padding: 35px;
+  margin: 10%;
+}
+
+img.aboutpageimg {
+  width: 10vw;
+  height: auto;
+  flex: 1;
+  margin: 10vw;
+}
