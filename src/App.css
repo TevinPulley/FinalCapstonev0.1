@@ -27,7 +27,7 @@ nav {
 nav a {
   text-decoration: none;
   color: black;
-  padding: 10%;
+  padding: 5%;
 }
 
 a.sign-up-shortcut {
@@ -116,6 +116,10 @@ button.text-reset {
   margin: 0;
   padding: 0;
   cursor: pointer;
+}
+
+div.g-4.row.row-cols-12 {
+  display: flexbox;
 }
 
 /* input.position-relative.form-control.form-control-lg:focus {

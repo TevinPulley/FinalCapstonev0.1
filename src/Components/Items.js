@@ -125,8 +125,8 @@ function Items() {
 
   const renderCard = (card, index) => {
     return (
-      <Row xs={1} md={2} lg={3} className="g-4">
-        {Array.from({ length: 1 }).map((_, idx) => (
+      <Row xs={2} md={3} lg={4} className="g-4">
+        {Array.from({ length: 1 }).map((_, index) => (
           <Col>
             <Card>
               <Card.Img variant="top" src={card.image} />
@@ -144,7 +144,7 @@ function Items() {
       </Row>
     );
   };
-
+  return <div className="Shopping">{cardInfo.map(renderCard)}</div>;
   // const renderCard = (card, index) => {
   //   return (
   //     <Row xs={2} md={3} lg={4} className="g-4">
@@ -161,8 +161,6 @@ function Items() {
   //       ))}
   //     </Row>
   //   );
-
-  return <div className="Shopping">{cardInfo.map(renderCard)}</div>;
 }
 
 export default Items;
