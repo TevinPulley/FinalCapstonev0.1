@@ -34,6 +34,8 @@ app.use(passport.session());
 
 var User = require("./userSchema");
 
+var Item = require("./itemSchema");
+
 // passport congiguration
 passport.use(
   new passportLocal.Strategy(
@@ -169,6 +171,43 @@ app.delete("/users/:user_id", function (req, res) {
   });
 });
 
+// Start of Item endpoints
+
+app.post("/item", function (req, res) {
+  console.log("getting item");
+  let item = new Item({
+    image: req.body.image,
+    name: req.body.name,
+    size: req.body.size,
+    specs: req.body.specs,
+    description: req.body.description,
+    price: req.body.price,
+  });
+  item
+    .save()
+    .then(function () {
+      res.sendStatus(201); // 201 = created
+    })
+    .catch(function (err) {
+      if (err.errors) {
+        console.log("there was a problem: ", err.errors);
+        var messages = {};
+        for (let e in err.errors) {
+          messages[e] = err.errors[e].message;
+        }
+        res.sendStatus(422);
+      } else {
+        res.sendStatus(500);
+      }
+    });
+});
+
+app.get("/items", function (req, res) {
+  Item.find({}).then(function (item) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.json(item);
+  });
+});
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 app.get("/", (req, res) => {
@@ -183,13 +222,10 @@ app.delete(`/api/jobs/:id`, deleteJob);
 // app.put(`/api/houses/:id`, updateHouse);
 
 mongoose
-  .connect(
-    `mongodb+srv://admin:SamuS22@crystalsitebackend.jazou4w.mongodb.net/test`,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(process.env.MONGOOSE_API_KEY, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(function () {
     app.listen(port, function () {
       console.log(`app Listening on port: ${port}`);
