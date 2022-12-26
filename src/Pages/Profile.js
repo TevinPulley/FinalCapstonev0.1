@@ -6,7 +6,7 @@ function Profile() {
   return (
     <Container id="main-container">
       <Form>
-        <h1 className="SignIn"> Please sign in. </h1>
+        {/* <h1 className="SignIn"> Please sign in. </h1>
         <Form.Group controlId="email">
           <Form.Control
             type="email"
@@ -29,11 +29,11 @@ function Profile() {
           <Form.Check label="Remember me" />
         </Form.Group>
         <div controlId="sign-in-Button">
-          <Button classname="signin" variant="primary" size="lg">
+          <Button className="signin" variant="primary" size="lg">
             {" "}
             Sign in{" "}
           </Button>
-        </div>
+        </div> */}
         <div>
           <h1 className="or">OR</h1>
           <CreateProfile />

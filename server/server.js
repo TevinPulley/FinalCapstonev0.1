@@ -127,7 +127,7 @@ app.post("/users", function (req, res) {
 
   let user = new User({
     email: req.body.email, // saving the hashed password into the encryptedPassword field
-    // encryptedPassword: req.body.encryptedPassword,
+    encryptedPassword: req.body.plainPassword,
     name: req.body.name,
   });
 
@@ -164,12 +164,12 @@ app.post("/users", function (req, res) {
 
 // Maybe change for deleting items out of carts
 
-app.delete("/users/:user_id", function (req, res) {
-  let user_id = req.params.user_id;
-  User.findByIdAndDelete({ _id: user_id }).then(function (user) {
-    res.json(user);
-  });
-});
+// app.delete("/items/:item_name", function (req, res) {
+//   let item_name = req.params.item_name;
+//   Item.findByNameAndDelete({ _id: item_name }).then(function (item) {
+//     res.json(item);
+//   });
+// });
 
 // Start of Item endpoints
 
@@ -214,11 +214,11 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./public"));
 });
 
-const { getJobs, createJob, deleteJob } = require("./controller");
+// const { getJobs, createJob, deleteItem } = require("./controller");
 
-app.get(`/api/jobs`, getJobs);
-app.post(`/api/jobs`, createJob);
-app.delete(`/api/jobs/:id`, deleteJob);
+// app.get(`/api/jobs`, getJobs);
+// app.post(`/api/jobs`, createJob);
+// app.delete(`/api/items/:id`, deleteItem);
 // app.put(`/api/houses/:id`, updateHouse);
 
 mongoose
