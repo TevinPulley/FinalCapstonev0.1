@@ -30,6 +30,10 @@ nav a {
   padding: 5%;
 }
 
+nav a:hover {
+  color: white;
+}
+
 a.sign-up-shortcut {
   text-decoration: none;
   color: black;
