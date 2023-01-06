@@ -1,8 +1,12 @@
-img.footer-app-logo {
-  position: inherit;
+h3.tex-uppercase.fw-bold.mb-4 {
+  display: flex;
+}
+
+img.foooter-App-logo {
+  display: flex;
+  position: relative;
   size: inherit;
-  left: 0;
-  width: 200px;
+  width: 20vw;
   height: auto;
 }
 

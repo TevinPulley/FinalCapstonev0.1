@@ -10,7 +10,7 @@ function Home() {
     <div>
       <div className="Carouseldiv">
         <Carousel>
-          <Carousel.Item interval={7000}>
+          <Carousel.Item interval={5000}>
             <img
               alt="Carousel1"
               src={crystalbackground4}
@@ -21,7 +21,7 @@ function Home() {
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
-          <Carousel.Item interval={7000}>
+          <Carousel.Item interval={5000}>
             <img
               color="transparent"
               alt="Carousel2"
@@ -33,7 +33,7 @@ function Home() {
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Carousel.Caption>
           </Carousel.Item>
-          <Carousel.Item interval={7000}>
+          <Carousel.Item interval={5000}>
             <img
               alt="Carousel3"
               src={crystalbackground5}

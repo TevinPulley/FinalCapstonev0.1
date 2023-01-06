@@ -34,6 +34,8 @@ app.use(passport.session());
 
 var User = require("./userSchema");
 
+var Item = require("./itemSchema");
+
 // passport congiguration
 passport.use(
   new passportLocal.Strategy(
@@ -125,7 +127,7 @@ app.post("/users", function (req, res) {
 
   let user = new User({
     email: req.body.email, // saving the hashed password into the encryptedPassword field
-    // encryptedPassword: req.body.encryptedPassword,
+    encryptedPassword: req.body.plainPassword,
     name: req.body.name,
   });
 
@@ -162,34 +164,68 @@ app.post("/users", function (req, res) {
 
 // Maybe change for deleting items out of carts
 
-app.delete("/users/:user_id", function (req, res) {
-  let user_id = req.params.user_id;
-  User.findByIdAndDelete({ _id: user_id }).then(function (user) {
-    res.json(user);
+// app.delete("/items/:item_name", function (req, res) {
+//   let item_name = req.params.item_name;
+//   Item.findByNameAndDelete({ _id: item_name }).then(function (item) {
+//     res.json(item);
+//   });
+// });
+
+// Start of Item endpoints
+
+app.post("/item", function (req, res) {
+  console.log("getting item");
+  let item = new Item({
+    image: req.body.image,
+    name: req.body.name,
+    size: req.body.size,
+    specs: req.body.specs,
+    description: req.body.description,
+    price: req.body.price,
   });
+  item
+    .save()
+    .then(function () {
+      res.sendStatus(201); // 201 = created
+    })
+    .catch(function (err) {
+      if (err.errors) {
+        console.log("there was a problem: ", err.errors);
+        var messages = {};
+        for (let e in err.errors) {
+          messages[e] = err.errors[e].message;
+        }
+        res.sendStatus(422);
+      } else {
+        res.sendStatus(500);
+      }
+    });
 });
 
+app.get("/items", function (req, res) {
+  Item.find({}).then(function (item) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.json(item);
+  });
+});
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./public"));
 });
 
-const { getJobs, createJob, deleteJob } = require("./controller");
+// const { getJobs, createJob, deleteItem } = require("./controller");
 
-app.get(`/api/jobs`, getJobs);
-app.post(`/api/jobs`, createJob);
-app.delete(`/api/jobs/:id`, deleteJob);
+// app.get(`/api/jobs`, getJobs);
+// app.post(`/api/jobs`, createJob);
+// app.delete(`/api/items/:id`, deleteItem);
 // app.put(`/api/houses/:id`, updateHouse);
 
 mongoose
-  .connect(
-    `mongodb+srv://admin:SamuS22@crystalsitebackend.jazou4w.mongodb.net/test`,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(process.env.MONGOOSE_API_KEY, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(function () {
     app.listen(port, function () {
       console.log(`app Listening on port: ${port}`);

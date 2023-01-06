@@ -1,13 +1,13 @@
-const jobs = require("./data.json");
+const items = require("./data.json");
 
 let globalId = 4;
 
 module.exports = {
-  getJobs: (req, res) => res.status(200).send(jobs),
-  deleteJob: (req, res) => {
-    let index = jobs.findIndex((elem) => elem.id === +req.params.id);
-    jobs.splice(index, 1);
-    res.status(200).send(jobs);
+  getItems: (req, res) => res.status(200).send(items),
+  deleteItem: (req, res) => {
+    let index = item.findIndex((elem) => elem.id === +req.params.id);
+    item.splice(index, 1);
+    res.status(200).send(item);
   },
 
   createJob: (req, res) => {
